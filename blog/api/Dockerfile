@@ -5,7 +5,7 @@
 # by Docker Compose to build a Docker image for our application.
 
 # Base this image on an official Node.js long term support image.
-FROM node:8.1.2-alpine
+FROM node:16-alpine
 
 # Install some additional packages that we need.
 RUN apk add --no-cache tini curl bash sudo
@@ -20,6 +20,7 @@ WORKDIR /app
 
 # Install the project's NPM dependencies.
 COPY package.json /app/
+#RUN npm install --verbose
 RUN npm --silent install
 RUN mkdir /deps && mv node_modules /deps/node_modules
 
