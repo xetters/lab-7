@@ -6,7 +6,7 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.user,
 dbConfig.password, dbConfig);
 // Load all of our model definitions
 const models = {
-    Post: sequelize.import(require.resolve('./post'))
+    Post: require('./post')(sequelize, Sequelize.DataTypes)
 };
 // Store the database connection
 models.database = sequelize;
