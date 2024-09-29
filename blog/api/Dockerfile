@@ -5,7 +5,7 @@
 # by Docker Compose to build a Docker image for our application.
 
 # Base this image on an official Node.js long term support image.
-FROM node:12-alpine
+FROM node:14-alpine
 
 
 # Install some additional packages that we need.
